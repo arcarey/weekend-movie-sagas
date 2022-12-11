@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 
 export default function MovieDetail(props) {
@@ -12,9 +12,15 @@ export default function MovieDetail(props) {
     // the current movie is the movie that matches our params ID
     const [currentMovie, setCurrentMovie] = useState(movies.find(thisMovie => thisMovie.movie.id == params.id).movie)
 
+    const history = useHistory();
+
+    const returnToList = () => {
+        history.push('/');
+    }
 
     return (
         <div>
+            <button onClick={() => returnToList()}>Back To List!</button>
             <h2>{currentMovie.title}</h2>
             <img src={currentMovie.poster} alt={currentMovie.title} />
             <p>{currentMovie.description}</p>

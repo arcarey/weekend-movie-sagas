@@ -10,7 +10,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 ## TODO
 [√] GET list of genres along with the other info
-[ ] Create button that goes back to the movie page
+[√] Create button that goes back to the movie page
 [ ] Style cards in selection page
 [ ] Style detail page
 [ ] update readme page
