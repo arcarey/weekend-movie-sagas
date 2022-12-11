@@ -8,9 +8,6 @@ export default function MovieDetail(props) {
     // so, we have the ID of the movie we want to render in here. We need to select the data based on the 
     const movies = useSelector(store => store.movies)
 
-    useEffect(
-        
-    )
     
     console.log(movies);
     console.log(params.id);
