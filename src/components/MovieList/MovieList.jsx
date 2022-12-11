@@ -11,6 +11,7 @@ function MovieList() {
 
     const handlePosterClick = (movie) => {
         console.log(movie.title);
+        
         history.push(`/detail/${movie.id}`)
         // on the click of each movie, load that movie into a global state? 
     }

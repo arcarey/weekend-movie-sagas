@@ -4,15 +4,13 @@ import { useParams } from "react-router-dom";
 
 
 export default function MovieDetail(props) {
+    // we'll use params to identify which movie page we are on. This is in the URL
     const params = useParams()
-    // so, we have the ID of the movie we want to render in here. We need to select the data based on the 
+    // we'll bring in the whole array of movies so that we can select which one we are looking at with the ID
     const movies = useSelector(store => store.movies)
-
-    
-    console.log(movies);
-    console.log(params.id);
+    // the current movie is the movie that matches our params ID
     const currentMovie = movies.find(movie => movie.id == params.id)
-    console.log(currentMovie);
+    // We'll need to fetch the genres of each movie based o
 
     return (
         <div>
@@ -20,7 +18,7 @@ export default function MovieDetail(props) {
             <img src={currentMovie.poster} alt={currentMovie.title} />
             <p>{currentMovie.description}</p>
             <ul>
-                
+
             </ul>
 
         </div>
