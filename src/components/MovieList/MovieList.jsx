@@ -9,11 +9,12 @@ function MovieList() {
     const movies = useSelector(store => store.movies);
     const history = useHistory();
 
+    // the click of a poster sends you to the detail page for that movie
     const handlePosterClick = (movie) => {
         console.log(movie.title);
         
         history.push(`/detail/${movie.id}`)
-        // on the click of each movie, load that movie into a global state? 
+
     }
 
     useEffect(() => {

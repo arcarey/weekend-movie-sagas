@@ -4,7 +4,8 @@ const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
 
-  //in this select, we're going to grab not only the movies, but the entire array of their genres
+  // in this select, we're going to grab not only the movies, but also an array of their genres
+  // the genres are in an array in each movie object
 
   const query = `SELECT row_to_json(mov) AS movie
                   FROM(
