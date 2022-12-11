@@ -23,18 +23,21 @@ export default function MovieDetail(props) {
     return (
         <div className="view-port">
             <button onClick={() => returnToList()}>Back To List!</button>
-            <h2>{currentMovie.title}</h2>
-            <img className="poster" src={currentMovie.poster} alt={currentMovie.title} />
+            <div className="info">
+                <img className="poster" src={currentMovie.poster} alt={currentMovie.title} />
+                <div className="title-detail">
+                    <h2>{currentMovie.title}</h2>
+                    <br/>
+                    <h4 className="genres">Genres:</h4>
+                            {currentMovie.genres.map(genre => {
+                                    return (
+                                        <div key = {genre.genres}>{genre.genres}</div>
+                                    )
+                                }                    
+                            )}
+                </div>
+            </div>
             <p>{currentMovie.description}</p>
-            <h4>Genres:</h4>
-            <ul>
-                {currentMovie.genres.map(genre => {
-                        return (
-                            <div key = {genre.genres}>{genre.genres}</div>
-                        )
-                    }                    
-                )}
-            </ul>
 
         </div>
     )
