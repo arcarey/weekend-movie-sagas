@@ -16,7 +16,13 @@ export default function MovieDetail(props) {
 
     return (
         <div>
-            <img src={currentMovie.poster} alt="" />
+            <h2>{currentMovie.title}</h2>
+            <img src={currentMovie.poster} alt={currentMovie.title} />
+            <p>{currentMovie.description}</p>
+            <ul>
+                
+            </ul>
+
         </div>
     )
 }
