@@ -14,3 +14,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [ ] Style cards in selection page
 [ ] Style detail page
 [ ] update readme page
+
+
+## 

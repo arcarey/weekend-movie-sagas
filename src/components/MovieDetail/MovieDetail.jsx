@@ -8,8 +8,11 @@ export default function MovieDetail(props) {
     const params = useParams()
     // we'll bring in the whole array of movies so that we can select which one we are looking at with the ID
     const movies = useSelector(store => store.movies)
+    console.log(movies);
     // the current movie is the movie that matches our params ID
-    const currentMovie = movies.find(movie => movie.id == params.id)
+    const currentMovie = movies.find(thisMovie => thisMovie.movie.id == params.id).movie
+    console.log(currentMovie);
+    console.log('genres:', currentMovie.genres);
     // We'll need to fetch the genres of each movie based o
 
     return (
@@ -18,7 +21,12 @@ export default function MovieDetail(props) {
             <img src={currentMovie.poster} alt={currentMovie.title} />
             <p>{currentMovie.description}</p>
             <ul>
-
+                {currentMovie.genres.map(genre => {
+                        return (
+                            <li key = {genre.genres}>{genre.genres}</li>
+                        )
+                    }                    
+                )}
             </ul>
 
         </div>

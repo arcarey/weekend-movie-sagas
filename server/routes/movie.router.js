@@ -4,10 +4,25 @@ const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
 
-  const query = `SELECT * FROM movies ORDER BY "title" ASC`;
+  //in this select, we're going to grab not only the movies, but the entire array of their genres
+
+  const query = `SELECT row_to_json(mov) AS movie
+                  FROM(
+                    SELECT m.id, m.title, m.poster, m.description, 
+                      (SELECT json_agg(genr)
+                      FROM (
+                        SELECT genres.name AS genres FROM genres
+                          JOIN movies_genres ON movies_genres.genre_id = genres.id
+                          JOIN movies ON movies_genres.movie_id = movies.id
+                          WHERE movies_genres.movie_id = m.id
+                      ) genr
+                  ) AS genres
+                      
+                  FROM movies AS m) mov;`;
   pool.query(query)
     .then( result => {
-      res.send(result.rows);
+      const movies = result.rows
+      res.send(movies);
     })
     .catch(err => {
       console.log('ERROR: Get all movies', err);
