@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
+import './MovieDetail.css'
+
 
 
 export default function MovieDetail(props) {
@@ -19,10 +21,10 @@ export default function MovieDetail(props) {
     }
 
     return (
-        <div>
+        <div className="view-port">
             <button onClick={() => returnToList()}>Back To List!</button>
             <h2>{currentMovie.title}</h2>
-            <img src={currentMovie.poster} alt={currentMovie.title} />
+            <img className="poster" src={currentMovie.poster} alt={currentMovie.title} />
             <p>{currentMovie.description}</p>
             <h4>Genres:</h4>
             <ul>

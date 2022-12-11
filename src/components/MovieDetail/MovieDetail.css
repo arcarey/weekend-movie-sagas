@@ -1,0 +1,17 @@
+
+button {
+    color: azure;
+    background-color: black;
+    border-radius: 3px;
+}
+
+.view-port {
+    padding: 20px;
+
+}
+
+.poster{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 2px;
+}
