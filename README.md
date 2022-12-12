@@ -1,17 +1,16 @@
-# Project Name
+# Movie database
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+This Project was completed as an assignment for Prime Digital Academy
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Duration: 1 weekend.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+This Movie database displays each Film and it's poster and allows you to click it and send you to a detailed view page of the movie. The movie information is held in a multi table postgres database with a multi-table query that returns a json object with complete info for each film. 
 
-## TODO
-[√] GET list of genres along with the other info
-[√] Create button that goes back to the movie page
-[ ] Style cards in selection page
-[ ] Style detail page
-[ ] update readme page
+Setup your database and run the queries provided in the database.sql provided, then run npm install to install dependencies. 
+
+
+
+
 
